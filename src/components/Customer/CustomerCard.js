@@ -1,9 +1,17 @@
 import React from "react"
 import "./Customer.css"
 
-export const CustomerCard = () => (
-    <section className="customer">
-        <h3 className="customer__name">Hannah Hall</h3>
-        <div className="customer__address">100 Infinity Way</div>
-    </section>
+export const CustomerCard = ({ customer, handleDeleteCustomer }) => (
+    <div className="card">
+        <div className="card-content">
+          <picture>
+            <img src={'https://upload.wikimedia.org/wikipedia/commons/3/38/Michael_Douglas_C%C3%A9sar_2016_3.jpg'} alt="Customer" />
+          </picture>
+          <h3>Name: <span className="card-customername">
+            {customer.name}
+          </span></h3>
+          <p>Phone Number: {customer.address}</p>
+          <button type="button" onClick={() => handleDeleteCustomer(customer.id)}>Delete</button>
+        </div>
+      </div>
 )
