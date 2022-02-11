@@ -10,7 +10,7 @@ export const EmployeeList = () => {
     const handleDeleteEmployee = id => {
         deleteEmployee(id)
         .then(() => getAllEmployees().then(setEmployees));
-      };
+    };
   
     const getEmployees = () => {
       // After the data comes back from the API, we

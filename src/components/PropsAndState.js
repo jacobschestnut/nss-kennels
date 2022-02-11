@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 
 export const PropsAndState = ({ yourName, address }) => {
 
@@ -15,6 +15,11 @@ export const PropsAndState = ({ yourName, address }) => {
     const newNegativeCountClicks = (limitedClicks - 1)
     setNegativeCountClicks(newNegativeCountClicks)
   }
+
+  useEffect(() => {
+    const multipliedCountClicks = (countClicks * 4);
+    return setCountClicks(multipliedCountClicks);
+  }, [setCountClicks]);
 
   if (limitedClicks === -1) {
     setNegativeCountClicks(10)

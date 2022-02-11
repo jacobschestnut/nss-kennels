@@ -8,10 +8,8 @@ export const EmployeeCard = ({ employee, handleDeleteEmployee }) => {
           <picture>
             <img src={'https://c8.alamy.com/comp/PK6ARW/happy-positive-nice-man-achieving-his-success-PK6ARW.jpg'} alt="employee" />
           </picture>
-          <h3>Name: <span className="card-employeename">
-            {employee.name}
-          </span></h3>
-          <p>Location:</p>
+          <h3>Name: <span className="card-employeename">{employee.name}</span></h3>
+          <p>Location: {employee.locationId}</p>
           <button type="button" onClick={() => handleDeleteEmployee(employee.id)}>Terminate</button>
         </div>
       </div>
