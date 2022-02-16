@@ -2,8 +2,12 @@ import React, { useState, useEffect } from 'react';
 //import the components we will need
 import { LocationCard } from './LocationCard';
 import { getAllLocations, getLocationById, deleteLocation } from '../../modules/LocationManager';
+import { useNavigate } from 'react-router-dom';
 
 export const LocationList = () => {
+
+  const navigate = useNavigate()
+  
   // The initial state is an empty array
   const [locations, setLocations] = useState([]);
 
@@ -28,6 +32,13 @@ export const LocationList = () => {
   // Finally we use .map() to "loop over" the locations array to show a list of location cards
   return (
     <div className="container-cards">
+      <section className="section-content">
+        <button type="button"
+            className="btn"
+            onClick={() => {navigate("/locations/create")}}>
+            New Location
+        </button>
+      </section>
       {locations.map(location => <LocationCard key={location.id} location={location} handleDeleteLocation={handleDeleteLocation} />)}
     </div>
   );
